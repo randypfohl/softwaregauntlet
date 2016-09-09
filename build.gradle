@@ -21,7 +21,7 @@ dependencies {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+    gradleVersion = '2.14.1'
 }
 
 test {
@@ -85,7 +85,6 @@ task sprint(type: Test) {
 }
 
 task regression(type: Test) {
-    systemProperties['env'] = System.properties["env"]
     maxParallelForks = 4
     useTestNG()
 }
