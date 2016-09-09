@@ -21,7 +21,19 @@ public class LoginForm extends UiRegion implements LoginFormValidatable {
 
     @Override
     public String getErrorMessage() {
+<<<<<<< HEAD
         return UiElement.getInstance("Error Message", UiElement.LocatorType.ID, "loginError", this.getElement()).getText();
+=======
+        return getErrorMessageElement().getText();
+    }
+
+    private UiElement getErrorMessageElement() {
+        return UiElement.getInstance("Error Message", UiElement.LocatorType.ID, "loginError", this.getElement());
+    }
+
+    public boolean expectFailureState() {
+        return getErrorMessageElement().waitUntilVisible();
+>>>>>>> 1f63679cc269d2d9c4ba6b4dc74074327f7db4cb
     }
 
     @Override
